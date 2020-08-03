@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="todo">
+        <input onclick="store()" type="button" value="post">
+    </form>
+
+    <span id="get"></span>
+    <input onclick="done()" type="button" value="done">
+    <span id="done"></span>
+
+    <script type="text/javascript">
+       var todos = [];
+       var tvalue= document.getElementById("todo");
+       var dones=[];
+      
+        function store() {
+           
+            
+            todos.push(tvalue.value)
+            localStorage.setItem("todo", todos);
+            document.getElementById("get").innerHTML = localStorage.getItem("todo");
+        }
+        function done() {
+           
+            todos.pop();
+            var gvalue = localStorage.getItem("todo");
+            dones.push(gvalue)
+            localStorage.setItem("done", dones);
+            
+            
+            document.getElementById("get").innerHTML = localStorage.getItem("todo");
+            document.getElementById("done").innerHTML = localStorage.getItem("done");
+        }
+    </script>
+</body>
+
+</html>

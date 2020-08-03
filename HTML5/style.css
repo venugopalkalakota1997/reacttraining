@@ -1,0 +1,93 @@
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    background: orange;
+    padding: 10px;
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+ .nav{
+     float: right;
+     padding: 20px;
+ }
+
+ .a {
+    color: white;
+    background-color:black;
+    padding: 5px;
+    text-decoration: none;
+}
+.form{
+    
+    position: relative; 
+    background-color: wheat; 
+    top: 20%; 
+    left: 35%; 
+    bottom: 10%;
+    height: 60%;
+    width: 30%;  
+    
+} 
+input,textarea,select {
+  
+    width: 90%;
+    padding: 12px 20px;
+    margin: 10px ;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10;  
+   
+  }
+
+  .button{
+    width: 150px;
+  }
+
+.home {
+    margin-top: 5%;
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.individual {
+    margin-top: 10px;
+    width: 26%;
+    float: left;
+    padding: 30px;
+    border: 2px solid red;
+    margin-right: 20px;
+}  
+.search{
+    float: right;
+    width: 20%;
+}
+.searchtext{
+    
+    margin-top: 10px;
+    width: 60%;
+}
+.btn{
+    width: 20%;
+    float: right;
+}
+.btncard{
+    margin-left: auto;
+    margin-right: 50px;
+    width: 30%;
+}
+
+.dropdown{
+    margin-top: 10px;
+    width: 26%;
+    float: left;
+    padding: 30px;
+    margin-right: 20px;
+}
+table, th, td {
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+}
