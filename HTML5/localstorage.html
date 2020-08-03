@@ -33,7 +33,9 @@
            
             todos.pop();
             var gvalue = localStorage.getItem("todo");
+
             dones.push(gvalue)
+            localStorage.removeItem("todo")
             localStorage.setItem("done", dones);
             
             
