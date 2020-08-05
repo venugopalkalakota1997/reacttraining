@@ -12,7 +12,6 @@ class Navbar extends React.Component {
     render() {
         return (
             <div>
-
                 <nav className="nav">
                     <Link className="Link" to="/signup">Signup  |  </Link>&nbsp;&nbsp;
                    <Link className="Link" to="/login">Login  |   </Link>&nbsp;&nbsp;
