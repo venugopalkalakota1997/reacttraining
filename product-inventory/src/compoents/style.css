@@ -1,0 +1,26 @@
+.login{
+    text-align: center;
+    position: relative; 
+    margin-top: 10%;
+    background-color: orange; 
+    height: 60%;
+    width: 30%; 
+    padding-bottom: 10%;
+    left: 35%; 
+    bottom: 10%;
+    
+       
+}
+.namepass{
+    text-align: left;
+}
+.nav{
+    float: none;
+    padding: 20px;
+    background: orange;
+}
+
+.Link{
+ float: right;
+ text-decoration: none;
+}
