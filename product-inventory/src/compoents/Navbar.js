@@ -17,11 +17,13 @@ class Navbar extends React.Component {
                    <Link className="Link" to="/login">Login  |   </Link>&nbsp;&nbsp;
                    <Link className="Link" to="/add">  Add Product |</Link>&nbsp;
                 </nav>
-                <Switch>
-                    <Route path='/login' exact component={Login}> </Route>
-                    <Route path='/signup' exact component={Signup}> </Route>
-                    <Route path='/add' exact component={Addproduct}> </Route>
-                </Switch>
+                <div>
+                    <Switch>
+                        <Route path='/login' exact component={Login}> </Route>
+                        <Route path='/signup' exact component={Signup}> </Route>
+                        <Route path='/add' exact component={Addproduct}> </Route>
+                    </Switch>
+                </div>
             </div>
         );
     }
