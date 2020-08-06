@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 import Addproduct from './Addproduct';
+import Home from './Home'
+import EditProduct from './EditProduct'
 import './style.css'
+
 
 
 class Navbar extends React.Component {
@@ -13,15 +15,17 @@ class Navbar extends React.Component {
         return (
             <div>
                 <nav className="nav">
-                    <Link className="Link" to="/signup">Signup  |  </Link>&nbsp;&nbsp;
-                   <Link className="Link" to="/login">Login  |   </Link>&nbsp;&nbsp;
-                   <Link className="Link" to="/add">  Add Product |</Link>&nbsp;
+                    <button className="button"><Link to="/">Product_Inventory</Link></button>
+                    <button className="buttonnav"><Link to='/register'>SignUp</Link> </button>&emsp;&nbsp;
+                    <button className="buttonnav"> <Link to='/login'>Login</Link></button>&nbsp;&nbsp;
                 </nav>
                 <div>
                     <Switch>
-                        <Route path='/login' exact component={Login}> </Route>
-                        <Route path='/signup' exact component={Signup}> </Route>
-                        <Route path='/add' exact component={Addproduct}> </Route>
+                        <Route exact path='/' component={Home}></Route> 
+                        <Route path='/login' component={Login}></Route>
+                        <Route path='/register' component={Signup}></Route>
+                        <Route path='/add' component={Addproduct}></Route>
+                        <Route path='/editproduct' component={EditProduct}></Route>
                     </Switch>
                 </div>
             </div>

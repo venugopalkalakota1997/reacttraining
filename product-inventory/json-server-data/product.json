@@ -1,0 +1,118 @@
+{
+  "productdetails": [
+    {
+      "name": "LG Telev",
+      "productdetails": "tv",
+      "quantity": 10,
+      "price": 27,
+      "category": "Televison",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "name": "LG Televison",
+      "price": 27,
+      "productdetails": "tv",
+      "category": "Televison",
+      "quantity": 10
+    },
+    {
+      "id": 12,
+      "name": "LG Televison",
+      "price": 27,
+      "productdetails": "tv",
+      "category": "Televison",
+      "quantity": 10
+    },
+    {
+      "id": 13,
+      "name": "LG Televison",
+      "price": 27,
+      "productdetails": "tv",
+      "category": "Televison",
+      "quantity": 10
+    },
+    {
+      "id": 14,
+      "name": "LG Televison",
+      "price": 27,
+      "productdetails": "tv",
+      "category": "Televison",
+      "quantity": 10
+    },
+    {
+      "id": 15,
+      "name": "LG Televison",
+      "price": 27,
+      "productdetails": "tv",
+      "category": "Televison",
+      "quantity": 10
+    },
+    {
+      "name": "Iphone",
+      "productdetails": "hh",
+      "quantity": "1",
+      "price": "2112",
+      "category": "",
+      "id": 16
+    },
+    {
+      "name": "nh",
+      "productdetails": "hj",
+      "quantity": 0,
+      "price": 0,
+      "category": "Mobile",
+      "id": 17
+    }
+  ],
+  "userdetails": [
+    {
+      "id": 1,
+      "name": "venu",
+      "contactnumber": 9703898363,
+      "password": "pwd",
+      "relatedTo_id": 1
+    },
+    {
+      "password": "nn",
+      "contactNumber": "nn",
+      "id": 2
+    },
+    {
+      "name": "jj",
+      "password": "jj",
+      "contactNumber": "jjj",
+      "id": 3
+    },
+    {
+      "name": "hh",
+      "password": "hh",
+      "contactNumber": "hh",
+      "id": 4
+    },
+    {
+      "name": "kk",
+      "password": "kk",
+      "contactNumber": "kk",
+      "id": 5
+    },
+    {
+      "name": "jkj",
+      "password": "kjk",
+      "contactNumber": "jkjk",
+      "id": 6
+    },
+    {
+      "name": "nn",
+      "password": "nn",
+      "contactNumber": "nn",
+      "id": 7
+    },
+    {
+      "name": "hjh",
+      "password": "hjj",
+      "contactNumber": "hjhj",
+      "id": 8
+    }
+  ]
+}

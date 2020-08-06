@@ -1,26 +1,124 @@
-.login{
-    text-align: center;
-    position: relative; 
-    margin-top: 10%;
-    background-color: orange; 
-    height: 60%;
-    width: 30%; 
-    padding-bottom: 10%;
-    left: 35%; 
-    bottom: 10%;
-    
-       
-}
-.namepass{
-    text-align: left;
-}
-.nav{
+nav{
     float: none;
-    padding: 20px;
-    background: orange;
+    padding: 30px;
+    background: blue; 
+}
+.buttonnav{
+ float: right;
+ background-color: grey;
+ border: none;
+    
+ color: white;
+ padding: 5px 32px;
+ text-align: center;
+ font-size: 16px;  
 }
 
-.Link{
+a{
  float: right;
  text-decoration: none;
+ color: white;
+ vertical-align: middle;
 }
+
+
+.home {
+    margin-top: 5%;
+    margin-left: 5%;
+    border: 3px solid #fff;
+    padding: 10px;
+}
+
+.individual {
+    margin-top: 10px;
+    width: 26%;
+    float: left;
+    padding: 30px;
+    border: 2px solid red;
+    margin-right: 20px;
+} 
+
+
+
+.button{
+    background-color: blue; /* Green */
+    border: none;
+    
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;  
+}
+.btnmodify{
+    background-color: blue; /* Green */
+    border: none;
+    margin-left: auto;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btndelete{
+    background-color: red; /* Green */
+    float: right;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form{
+    margin: auto;
+    width: 50%;
+    border: 3px solid blue;
+    padding: 50px;
+    
+} 
+.input,textarea {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 10px ;
+    box-sizing: border-box;
+   
+    padding: 10;  
+   
+  }
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+ 
+.searchtext{
+    padding: 12px 20px;
+    margin: 10px ;
+    box-sizing: border-box;
+   
+    padding: 10;  
+    margin-top: 10px;
+    width: 80%;
+  
+}
+.searchbutton {
+    float: none;
+    width: 10%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  .buttonadd{
+    background-color: blue; /* Green */
+    border: none;
+    margin-left: 80%;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;  
+    margin-right: 50;
+  }
