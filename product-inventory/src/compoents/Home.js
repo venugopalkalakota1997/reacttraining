@@ -5,18 +5,25 @@ import { Link } from 'react-router-dom';
 
 import './style.css';
 
+
 class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            permenantproducts: [],
             products: [],
             deleteSuccess: false,
             updateSuccess: false,
-            search: ''
+            search: '',
+            selectedOption: false,
+            categorystatus: false
+
         }
+
     }
 
     componentWillMount() {
+
         this.getAllProducts()
     }
     getAllProducts = () => {
@@ -24,7 +31,10 @@ class Home extends React.Component {
             .then(response => {
 
                 console.log(response.data)
-                this.setState({ products: response.data })
+                this.setState({
+                    products: response.data,
+                    permenantproducts: response.data
+                })
 
             }, error => {
                 console.error(error);
@@ -71,6 +81,7 @@ class Home extends React.Component {
                     quantity={product.quantity}
                     price={product.price}
                     category={product.category}
+                    image={product.image}
                     deleteId={this.deleteProductWithId}
                     editId={this.editProductWithId}
                 >
@@ -84,22 +95,68 @@ class Home extends React.Component {
     getsearch = (event) => {
         console.log(event.target.value)
         this.setState({ search: event.target.value })
-        if (this.state.search === ' ') {
-            this.getAllProducts()
+        if (event.target.value !== '') {
+            let filteredvalues = this.state.permenantproducts.filter((fproduct) => {
+
+                return fproduct.name.toLowerCase().includes(event.target.value.toLowerCase())
+            })
+            this.setState({
+                products: filteredvalues
+            })
         }
         else {
-            axios.get('http://localhost:3000/productdetails/?q=' + this.state.search)
-                .then(response => {
-                    console.log(response.data)
-                    this.setState({ products: response.data })
-                }, error => {
-                    console.error(error);
-                })
+            this.getAllProducts()
+        }
+    }
+    getcategorysearch = (event) => {
+
+
+        if (event.target.value !== 'Select Category' && !this.state.selectedOption) {
+
+            let filteredvalues = this.state.permenantproducts.filter((fproduct) => {
+
+                return (
+                    fproduct.category.includes(event.target.value)
+                )
+
+            })
+            this.setState({
+                products: filteredvalues,
+                category: true,
+                selectedOption: false
+            })
+        }
+        else {
+            this.setState({ category: false })
+            this.getAllProducts()
+        }
+
+    }
+
+    onValueChange = (event) => {
+
+        this.setState({
+
+            selectedOption: !this.state.selectedOption
+        });
+        this.avalabilestock()
+    }
+    avalabilestock() {
+        if (!this.state.selectedOption) {
+            let filteredvalues = this.state.permenantproducts.filter((fproduct) => {
+                return (fproduct.quantity !== "0")
+            })
+            this.setState({
+                products: filteredvalues
+            })
+        }
+        else {
+            this.getAllProducts();
         }
     }
 
-
     render() {
+        let username = localStorage.getItem("username")
         return (
             <div className="home">
                 <input type="text" className="searchtext" placeholder="Search.." name="search" onChange={this.getsearch}></input>
@@ -107,7 +164,31 @@ class Home extends React.Component {
                 <br></br>
                 <br></br>
                 <span>
-                    <button className="buttonadd"><Link to='/add'>Addproduct&nbsp;&nbsp;</Link></button>
+                    <div className="filter">
+                        <p>Filter by:</p>
+                        {!this.state.selectedOption &&
+                            <select id="productcategory" onChange={this.getcategorysearch}>
+                                <option id="productcategory">Select Category</option>
+                                <option id="productcategory">Televison</option>
+                                <option id="productcategory">Mobile </option>
+                                <option id="productcategory">Furniture</option>
+                                <option id="productcategory">Computer Accessories</option>
+                            </select>
+                        } &emsp;
+                        {!this.state.category &&
+                            <label>
+                                Product in stock :
+                        <input type="checkbox" defaultChecked={this.state.selectedOption} onChange={this.onValueChange} />Yes
+                         </label>
+                        }
+                    </div>
+                    {username !== null &&
+                        <div className="addproduct">
+
+                            <button className="buttonadd" ><Link to='/add'>Addproduct&nbsp;&nbsp;</Link></button>
+                            <button className="buttonadd"><Link to='/dashboard'>Dashboard</Link></button>
+                        </div>
+                    }
                 </span><br></br><br></br>
                 {this.state.deleteSuccess &&
                     <div className="alert">
