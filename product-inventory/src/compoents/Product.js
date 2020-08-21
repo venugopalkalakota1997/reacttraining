@@ -25,10 +25,10 @@ class Product extends React.Component {
                 <p>{this.props.id}</p>
                 <p>Category :{this.props.category} </p>
                 <p className="description">Description :{this.props.productdetails} </p>
-                <p >
+                <p>
                     <span style={{float:"left" ,padding: "0px 2px"}}>Price:Rs.{this.props.price}  </span>
                     
-                   <span  style={{float:"right",padding: "0px 32px"}}>  Quantity:{this.props.quantity}</span>
+                   <span  style={{float:"right",padding: "0px 32px"}}>Quantity:{this.props.quantity}</span>
                     
                 </p>
                 

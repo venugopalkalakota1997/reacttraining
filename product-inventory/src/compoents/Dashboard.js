@@ -129,7 +129,7 @@ class Dashboard extends React.Component {
 
                         totalquantity: this.state.totalquantity + Number(product.quantity)
                     })
-                    
+
                     return this.state.totalquantity;
                 })
 
@@ -205,15 +205,15 @@ class Dashboard extends React.Component {
     getcategoryproductTelevisionbar() {
         let datahere = [];
         this.setState({
-            noproduct:[]
+            noproduct: []
         })
         this.state.products.map((product) => {
             if (product.category === "Televison") {
                 datahere = datahere.concat(product.quantity)
                 this.setState({
-                   
+
                     datacategory: {
-                        
+
                         labels: this.state.datacategory.labels.concat(product.name),
                         datasets: [
                             {
@@ -224,31 +224,31 @@ class Dashboard extends React.Component {
                         ]
                     }
                 })
-               
+
                 if (product.quantity === '0') {
 
                     this.setState({
                         noproduct: this.state.noproduct.concat(product.name),
-    
+
                     })
                 }
-            
+
 
             }
-            
+
             return this.state.datacategory;
         })
     }
     getcategoryproductMobilebar() {
         let datahere = [];
         this.setState({
-            noproduct:[]
+            noproduct: []
         })
         this.state.products.map((product) => {
             if (product.category === "Mobile") {
                 datahere = datahere.concat(product.quantity)
                 this.setState({
-                   
+
                     datacategory: {
                         labels: this.state.datacategory.labels.concat(product.name),
                         datasets: [
@@ -264,7 +264,7 @@ class Dashboard extends React.Component {
 
                     this.setState({
                         noproduct: this.state.noproduct.concat(product.name),
-    
+
                     })
                 }
             }
@@ -274,13 +274,13 @@ class Dashboard extends React.Component {
     getcategoryproductFurniturebar() {
         let datahere = [];
         this.setState({
-            noproduct:[]
+            noproduct: []
         })
         this.state.products.map((product) => {
             if (product.category === "Furniture") {
                 datahere = datahere.concat(product.quantity)
                 this.setState({
-                   
+
                     datacategory: {
                         labels: this.state.datacategory.labels.concat(product.name),
                         datasets: [
@@ -296,7 +296,7 @@ class Dashboard extends React.Component {
 
                     this.setState({
                         noproduct: this.state.noproduct.concat(product.name),
-    
+
                     })
                 }
             }
@@ -306,14 +306,14 @@ class Dashboard extends React.Component {
     getcategoryproductComputerbar() {
         let datahere = [];
         this.setState({
-            noproduct:[]
+            noproduct: []
         })
         this.state.products.map((product) => {
             if (product.category === "Computer Accessories") {
 
                 datahere = datahere.concat(product.quantity)
                 this.setState({
-                    
+
                     datacategory: {
                         labels: this.state.datacategory.labels.concat(product.name),
                         datasets: [
@@ -329,7 +329,7 @@ class Dashboard extends React.Component {
 
                     this.setState({
                         noproduct: this.state.noproduct.concat(product.name),
-    
+
                     })
                 }
             }
@@ -351,9 +351,9 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="dashboardbar">
-                   
+
                     <h3>Product Quantity of Idividual Category</h3>
-                    
+
                     <select id="productquantity" className="input" onChange={this.getcategory}>
                         <option id="productcategory">Select Category</option>
                         <option id="productcategory">Televison</option>
@@ -362,13 +362,13 @@ class Dashboard extends React.Component {
                         <option id="productcategory">Computer Accessories</option>
                     </select><br></br>
 
-                    { this.state.noproduct.length !== 0 &&
-                    <label>Products out of stock: <p style={{color:"red"}}>{this.state.noproduct.map(product => { return <label>{product}, &nbsp;</label> })}
-                    </p></label>
-                     }
-                     { this.state.datacategory.labels.length !==0 &&
-                    <Bar data={this.state.datacategory} width={100} height={50} options={{ maintainAspectRatio: false }}>  </Bar>
-                     }
+                    {this.state.noproduct.length !== 0 &&
+                        <label>Products out of stock: <p style={{ color: "red" }}>{this.state.noproduct.map(product => { return <label>{product}, &nbsp;</label> })}
+                        </p></label>
+                    }
+                    {this.state.datacategory.labels.length !== 0 &&
+                        <Bar data={this.state.datacategory} width={100} height={50} options={{ maintainAspectRatio: false }}>  </Bar>
+                    }
                 </div>
             </div>
         );
